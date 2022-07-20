@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        #container{
+            width: 95vw;
+            margin: auto;
+            margin-top: 2px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border: 1px solid #c5c3c3;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            letter-spacing: 2px;
+            border-radius: 5px;
+        }
+        #container>div{
+            font-size: 0.8rem;
+        }
+        #container>button{
+            width: 4%;
+            margin-left: -55px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+            margin-right: -20px;
+            border: 0px;
+            background-color: #e9e9e9;
+            color: rgba(191,52,104,255);
+        }
+        #container>button~div:hover{
+            background-color: #e9e9e9;
+            margin: -8px -26px -8px -26px;
+            padding: 4px 26px 6px 26px;
+            border-bottom: 2px solid rgba(146,190,77,255);
+        }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown>span{
+            font-size: 0.9rem;
+            height: 100%;
+            margin-left: -3.1rem;
+            color: rgba(191,52,104,255);
+            background-color: #e9e9e9;
+            padding: 5px 5px 5px 32px;
+            border-top: 1px solid #c5c3c3;
+            border-left: 1px solid #c5c3c3;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .downmenu{
+            display: none;
+            position: absolute;
+            top: 0.8rem;
+            left: -2.9rem;
+            min-width: 190px;
+            font-size: 0.7rem;
+            z-index: 1;
+        }
+        .downmenu{
+            border: 1px solid #c5c3c3;
+            background-color: white;
+        }
+        .downmenu>li{
+            margin-top: 0px;
+            margin-left: -40px;
+            padding: 5px 0px 5px 0px;
+            list-style: none;
+            border-bottom: 1px solid#c5c3c3;
+            font-weight: 500;
+        }
+        .dropdown:hover .downmenu{
+            display: block;
+        }
+        .downmenu>li::after{
+            float: right;
+            content: ">";
+        }
+        .downmenu>li:hover{
+            background-color: rgba(146,190,77,255);
+            color: white;
+        }
+        .banner{
+            width: 96vw;
+            margin: auto;
+            margin-top: 2px;
+            border-radius:10px;
+        }
+        .banner>img{
+            width: 100%;
+            border-radius:10px;
+        }
+        .crauser{
+            width: 96vw;
+            margin: auto;
+            margin-top: 10px;
+            border-radius:10px;
+            position: relative;
+        }
+        .crauser>img{
+            width: 100%;
+            border-radius:10px;
+        }
+        .crauser>button{
+            position: absolute;
+            top: 85%;
+            width: 15px;
+            height: 15px;
+            border: 0px;
+            border-radius: 3px;
+            background-color: white;
+        }
+        #num1{
+            left: 1rem;
+        }
+        #num2{
+            left: 2.5rem;
+        }
+        #num3{
+            left: 4rem;
+        }
+        #num4{
+            left: 5.5rem;
+        }
+        #num5{
+            left: 7rem;
+        }
+        #num6{
+            left: 8.5rem;
+        }
+        #num7{
+            left: 10rem;
+        }
+        #num8{
+            left: 11.5rem;
+        }
+        #festOffer{
+            width: 96vw;
+            margin: auto;
+            margin-top: 15px;
+            display: flex;
+            gap: 30px;
+        }
+        #festOffer>div{
+            width: 32%;
+            border-radius: 10px;
+            background-color: #c5c3c3;
+        }
+        #festOffer>div>img{
+            width: 100%;
+            border-radius: 10px;
+            position: relative;
+            bottom: 0.1rem;
+            right: 0.2rem;
+         
+        }
+        #festOffer+div{
+            width: 50vw;
+            margin: auto;
+            margin-top: -5px;
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2rem;
+        }
+        #festOffer+div>p::before{
+            content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+            text-decoration:line-through;
+            color: #dadada;
+        }
+        #festOffer+div>p::after{
+            content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+            text-decoration:line-through;
+            color: #dadada; 
+        }
+        #cat{
+            width: 86vw;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #cat>div{
+            width: 24%;
+        }
+        #cat>div>img{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: rgb(208, 176, 176) 7.4px 7.4px 8.2px;
+        }
+        #cat>div>ul{
+            text-align: start;
+            margin-left: -35px;
+            font-weight: 400;
+        }
+        #cat>div>li{
+            font-size: 0.8rem;
+            margin-left: 5px;
+            padding-bottom: 8px;
+            margin-top: 8px;
+            word-spacing: 2px;
+            border-bottom: 1px solid #c5c3c3;
+            list-style: none;
+            color: gray;
+        }
+        #cat>div>li:last-child{
+            border-bottom: 0px;
+            color: rgba(146,190,77,255);
+        }
+        #cart>div>li>span{
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo">
+            <img src="https://www.naturesbasket.co.in/Images/logosnew.png?v=2" alt="logo">
+        </div>
+        <div id="searchBox">
+            <div>
+                <span href="">Online Slots Availability</span>
+                <a>|</a>
+                <span href="">Fresh & Fast</span>
+                <a>|</a>
+                <span href="">Store Locator</span>
+                <a>|</a>
+                <span href="">Contact Us</span>
+                <a>|</a>
+                <select name="location" id="location">
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="delhi">Delhi NCR</option>
+                    <option value="bengaluru">Bengaluru</option>
+                    <option value="thane">Thane</option>
+                    <option value="navi-mumbai">Navi Mumbai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="raigarh-mh">Raigarh MH</option>
+                </select>
+                <input type="number" name="pincode" placeholder="Enter Pincode"/>
+            </div>
+            
+            <div id="searchBar">
+                <input type="text" placeholder="Start shopping..."/>
+                <button class="btn"><span class="material-symbols-outlined">search</span></button>
+            </div>
+        </div>
+        <div id="login">
+            <div>
+                <a href="">Login |</a>
+                <a href="">Register</a>
+            </div>
+            <div>
+                <button class="btn"><span class="material-symbols-outlined">star</span></button>
+                <a>|</a>
+                <button class="btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+            <div class="dropdown">
+                <span>SHOP BY CATEGORY</span>
+                <ul class="downmenu">
+                    <li>&nbsp;&nbsp;Gift Hampers</li>
+                    <li>&nbsp;&nbsp;Fruits & Vegetables</li>
+                    <li>&nbsp;&nbsp;Cheese, Meat & Fruit Platters</li>
+                    <li>&nbsp;&nbsp;Delicatessen & Cheese</li>
+                    <li>&nbsp;&nbsp;International Cuisine</li>
+                    <li>&nbsp;&nbsp;Health</li>
+                    <li>&nbsp;&nbsp;Indian Grocery</li>
+                    <li>&nbsp;&nbsp;Confectionary & Patisserie</li>
+                    <li>&nbsp;&nbsp;Meats, Seafood And Eggs</li>
+                    <li>&nbsp;&nbsp;Snack Bar</li>
+                    <li>&nbsp;&nbsp;Snack & Beverages</li>
+                    <li>&nbsp;&nbsp;Breakfast, Dairy & Bakery</li>
+                    <li>&nbsp;&nbsp;Instant Meals & Aids</li>
+                    <li>&nbsp;&nbsp;The Good Food Cafe</li>
+                    <li>&nbsp;&nbsp;Packing Material</li>
+                </ul>
+            </div>
+        <button><span class="material-symbols-outlined">arrow_drop_down</span></button>
+        <div>MY ORDERS</div>
+        <div>GIFTING</div>
+        <div>REWARDS</div>
+        <div>BLOG</div>
+        <div>OFFERS</div>
+        <div>CONNOISSEUR’S SELECTION</div>
+        <div>BOOK STORE VISIT</div>
+    </div>
+    <div class="banner">
+        <img src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/d8cc09f5-5d68-4853-ae9a-233ceabe3acd.jpg?v=1" alt="">
+    </div>
+    <div class="crauser">
+        <img src="https://d1z88p83zuviay.cloudfront.net/BannerImages/0f2301bb-4607-47f9-859c-1c2c21642159_1320x376.jpg" alt="">
+        <button id="num1"></button>
+        <button id="num2"></button>
+        <button id="num3"></button>
+        <button id="num4"></button>
+        <button id="num5"></button>
+        <button id="num6"></button>
+        <button id="num7"></button>
+        <button id="num8"></button>
+    </div>
+    <div id="festOffer">
+        <div>
+            <img src="https://www.naturesbasket.co.in/Images/NaturesBasketGifting.jpeg?v=7" alt="">
+        </div>
+        <div>
+            <img src="https://www.naturesbasket.co.in/Images/Japanesecuisine-webbox.png?v=10" alt="">
+        </div>
+        <div>
+            <img src="https://www.naturesbasket.co.in/Images/Gluten-free-web%20box%20banner.png?v=15" alt="">
+        </div>
+    </div>
+    <div>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;SHOP BY CATEGORY&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    </div>
+    <div id="cat"></div>
+</body>
+</html>
+
+
+<!-- javascript -->
+<script>
+ 
+    let dataArr=[
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/0f2301bb-4607-47f9-859c-1c2c21642159_1320x376.jpg",
+
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/95cca699-6c66-4df8-ace2-7effeddecfaa_1320x376.jpg",
+
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/bf01d76e-4c92-4046-832a-7b50b9ad266e_1320x376.jpg",
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/ce74f1db-d70d-4ff2-a5d9-87f9a997fc32_1320x376.jpg",
+
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/88d68b3d-2bfc-497e-af24-dd2b5378b675_1320x376.jpg",
+
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/4209a79c-0340-4d68-9479-deee041844d0_1320x376.jpg",
+
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/efc458aa-dd72-4a60-9be1-9dc516f10977_1320x376.jpg",
+    },
+    {
+        img:"https://d1z88p83zuviay.cloudfront.net/BannerImages/0ccd5368-14a4-411d-bb6c-84d981238b15_1320x376.jpg",
+
+    }
+]
+let crauser=document.querySelector(".crauser");
+let image=document.querySelector(".crauser>img");
+let num1=document.getElementById("num1")
+num1.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[0].img
+})
+let num2=document.getElementById("num2")
+num2.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[1].img
+})
+let num3=document.getElementById("num3")
+num3.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[2].img
+})
+let num4=document.getElementById("num4")
+num4.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[3].img
+})
+let num5=document.getElementById("num5")
+num5.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[4].img
+})
+let num6=document.getElementById("num6")
+num6.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[5].img
+})
+let num7=document.getElementById("num7")
+num7.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[6].img
+})
+let num8=document.getElementById("num8")
+num8.addEventListener("click",function(){
+    let a=document.querySelector(".crauser>img");
+    a.src=dataArr[7].img
+})
+
+
+let categoryArr=[
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/Exoticvegetablesweb.png",
+        cat: "Exotic Vegetables",
+        l1:"Asparagus Artichokes",
+        l2:"Avocados Peppers",
+        l3:"Broccoli Zucchini",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/coldcutweb.png",
+        cat:"Meat, Poultry & Seafood",
+        l1:"Chicken Cuts Lollipops Mince",
+        l2:"Fish Other Seafood",
+        l3:"Fresh Kebabs Others"
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/Freshartisinalbreadsweb.png",
+        cat:"Fresh Artisanal Breads",
+        l1:"Breadsticks Crostinni Lavache",
+        l2:"Buns Croissants Bagels",
+        l3:"Muffins Cakes Brownies"
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/dailyessentialsweb.png",
+        cat:"Daily Essentials",
+        l1:"Snacks & Beverages",
+        l2:"Breakfast, Dairy & Bakery",
+        l3:"Staples",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/Organicweb.png",
+        cat:"Organic",
+        l1:"Fruits & Vegetables",
+        l2:"Staples",
+        l3:"Bakery & Dairy",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/Readytoeatweb.png",
+        cat:"Ready to Eat",
+        l1:"Hors'D Oeuvres",
+        l2:"Pastries Desserts",
+        l3:"Soups Salads",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/bespokeweb.png",
+        cat:"The Gift Studio",
+        l1:"Celebrations with Nature's Basket",
+        l2:"World Food Hampers",
+        l3:"Bulk Enquiry",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/fineteasweb.png",
+        cat:"Fine Teas",
+        l1:"Black Teas",
+        l2:"Green White Oolong Teas",
+        l3:"Herbal Teas Detox Benefit Blends",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/hearthealthyfoodsweb.png",
+        cat:"Heart Healthy Foods",
+        l1:"Amaranth Couscous Quinoa",
+        l2:"Flours Rice Condiments",
+        l3:"Seafood Lean Meats",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/indiangroceryweb.png",
+        cat:"Indian Grocery",
+        l1:"Salt Sugar Substitutes",
+        l2:"Cooking Spices Powders",
+        l3:"Oils",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/confectionaryweb.png",
+        cat:"Confectionary and Patisseire",
+        l1:"Milk Dark Mint Chocolates",
+        l2:"Cakes, Brownie, Pancake & Mixes",
+        l3:"Ice-creams & Kulfi",
+    },
+    {
+        img:"https://gnbdevcdn.s3.amazonaws.com/Images/Category/internationalcusineweb.png",
+        cat:"International Cuisine",
+        l1:"Pasta",
+        l2:"Rice Quinoa",
+        l3:"Olive Extravirgin Olive Oils",
+    }
+]
+
+for (let i=0; i<4; i++){
+    let div=document.createElement("div");
+    let img=document.createElement("img");
+    img.setAttribute("src",categoryArr[i].img);
+    let catname=document.createElement("ul");
+    catname.innerText=categoryArr[i].cat;
+    let l1=document.createElement("li");
+    l1.innerText=categoryArr[i].l1;
+    let l2=document.createElement("li");
+    l2.innerText=categoryArr[i].l2
+    let l3=document.createElement("li");
+    l3.innerText=categoryArr[i].l3;
+    let l4=document.createElement("li");
+    l4.innerText="View All"
+    div.append(img,catname,l1,l2,l3,l4);
+    document.querySelector("#cat").append(div)
+}
+</script>
