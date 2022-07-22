@@ -1,0 +1,102 @@
+#top{
+    width: 85vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#top>div{
+    width: 18%;
+    font-family: 'Comfortaa', cursive;
+}
+#top>div:last-child{
+    width: 28%;
+}
+#top>div>h5{
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+}
+#top>div>li{
+    font-size: 0.63rem;
+    line-height: 19px;
+    font-weight: 600;
+    color: rgb(143, 142, 142);
+}
+li{
+    list-style: none;
+}
+#top>div>div>img{
+    width: 70%;
+}
+#top>div:last-child>input{
+    border: 1px solid gainsboro;
+    padding: 0.8rem 5rem 0.8rem 1rem;
+    margin-bottom: 20px;
+}
+#top>div:last-child>button{
+    padding: 0.6rem 1.3rem;
+    font-size: 0.65rem;
+    color: white;
+    background-color: rgba(146,190,77,255);
+    border: 0px;
+    font-family: 'Comfortaa', cursive;
+}
+#mid{
+    width: 93vw;
+    margin: auto;
+    margin-top: 30px;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mid>p{
+    margin-left: 50px;
+    margin-right: -10rem;
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+}
+#mid>div:last-child{
+    margin-right: 40px;
+}
+#mid>div>i{
+    margin-right: 12px;
+    color: gainsboro;
+}
+#bottom{
+    width: 85vw;
+    margin: auto;
+    margin-top: 0px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+#bottom>div{
+    width: 20%;
+}
+#bottom>div>h5{
+    font-size: 0.7rem;
+    margin-top: 45px;
+    margin-bottom: 13px;
+    font-family: 'Comfortaa', cursive;
+}
+#bottom>div>li{
+    font-size: 0.63rem;
+    line-height: 19px;
+    font-weight: 600;
+    font-family: 'Comfortaa', cursive;
+    color: rgb(143, 142, 142);
+}
+#bottom+div{
+    width: 93vw;
+    margin: auto;
+    margin-bottom: 50px;
+    border-top: 1px solid gainsboro;
+}
+#bottom+div>p{
+    text-align: center;
+    color: gray;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.6rem;
+    word-spacing: 4px;
+}
