@@ -73,6 +73,7 @@ num8.addEventListener("click",function(){
     a.src=dataArr[7].img
 })
 
+// Category
 
 let categoryArr=[
     {
@@ -221,62 +222,67 @@ document.querySelector("#leftBtn").addEventListener("click",function(){
     }
 })
 
+// Trending Offer
+
+let addArr=JSON.parse(localStorage.getItem("addToCart"))||[];
+
+
 let trendArr=[
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/a7bb827b-18d6-4c40-b9f5-96ea997ec44c_425x425.jpg",
         name:"S&B Golden Curry Sauce Mix Medm Hot",
         qty:"1 Pc",
-        disAmt:"526.50",
-        mrp:"₹585.0",
+        mrp:"526.50",
+        disAmt:"₹585.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/21524481-2a4b-453e-8928-24acf84dcdeb_425x425.jpg",
         name:"LA CARNE BACON WRAPPD PORK SAUS",
         qty:"1 Pc",
-        disAmt:"410.00",
-        mrp:"₹450.0",
+        mrp:"410.00",
+        disAmt:"₹450.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cb69f76a-2d99-4ca4-84cf-633d51c50ebc_425x425.jpg",
         name:"Voila Teriyaki Sauce 400g",
         qty:"1 Pc",
-        disAmt:"312.00",
-        mrp:"₹390.0",
+        mrp:"312.00",
+        disAmt:"₹390.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/19c35a3a-bd55-45ba-ac25-e1bcdd239610_425x425.jpg",
         name:"ALF FARMS CHICKEN HOT DOG",
         qty:"1 Pc",
-        disAmt:"170.00",
-        mrp:"₹185.0",
+        mrp:"170.00",
+        disAmt:"₹185.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/5850e609-9fc0-4ea1-9401-f696651f0cde_425x425.jpg",
-        name:"Wheat Grass Powder Organic - Organic Tattva",
+        name:"Wheat Grass Powder Organic - Organic",
         qty:"1 Pc",
-        disAmt:"204.25",
-        mrp:"₹215.0",
+        mrp:"204.25",
+        disAmt:"₹215.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cba34259-3bf4-4ef8-b7f3-1c3c66b7991b_425x425.JPG",
         name:"LA CARNE CHICKEN PIRI PIRI 300g",
         qty:"1 Pc",
-        disAmt:"315.00",
-        mrp:"₹340.0",
+        mrp:"315.00",
+        disAmt:"₹340.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/9f287bfb-a74b-46d9-a328-465804410ee9_425x425.jpg",
         name:"ALF FARMS PORK HAM 150 G",
         qty:"1 Pc",
-        disAmt:"155.00",
-        mrp:"₹170.0",
+        mrp:"155.00",
+        disAmt:"₹170.0",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/ef3cff84-d958-43f3-80f5-15c1c478b3d6_425x425.jpg",
         name:"BON APPETITE PORK CHORIZO 1KG",
         qty:"1 kg",
-        disAmt:"2,475.00",
-        mrp:"₹2750.0",
+        mrp:"2475.00",
+        disAmt:"₹2750.0",
     }
 ]
 trendData(trendArr,0,4);
@@ -296,23 +302,31 @@ function trendData(trendArr,start,end){
     qty.innerText=trendArr[i].qty;
 
     let disAmt=document.createElement("p");
-    disAmt.innerText="Buy @ Rs."+trendArr[i].disAmt+"/-";
+    disAmt.innerText="Buy @ Rs."+trendArr[i].mrp+"/-";
 
     let mrp=document.createElement("a");
     let dis=document.createElement("s");
-    dis.innerText=trendArr[i].mrp;
+    dis.innerText=trendArr[i].disAmt;
     mrp.innerText="MRP ";
     mrp.append(dis)
 
     let price=document.createElement("a");
-    price.innerText="₹"+trendArr[i].disAmt;
+    price.innerText="₹"+trendArr[i].mrp;
 
+    let div1=document.createElement("div");
     let addToCart=document.createElement("button");
+    addToCart.addEventListener("click",function(){
+        addToCartFunc(trendArr[i])
+        alert("Product Added To Cart");
+    })
+
     let span=document.createElement("span");
     span.setAttribute("class","material-symbols-outlined")
     span.innerText="shopping_cart"
-    addToCart.append(span);
-    div.append(img,time,name,qty,disAmt,mrp,price,addToCart);
+    addToCart.append(span,"ADD");
+    div1.append(mrp,price,addToCart)
+
+    div.append(img,time,name,qty,disAmt,div1);
     document.querySelector("#trend").append(div);
 }
 }
@@ -340,6 +354,13 @@ document.querySelector("#leftBtn1").addEventListener("click",function(){
     }
 })
 
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
+// Curated for you 
+
 let curatedArr=[
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/c9921594-55a8-4658-8a5e-b4fe49f02bb7_425x425.jpg",
@@ -357,7 +378,7 @@ let curatedArr=[
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/6b5df9e3-0ba5-470b-84c8-dffc35a8913e_425x425.jpg",
         name:"Cinnamon Organic - Organic Tattva",
         qty:"1 Pc",
-        mrp:"₹80.75",
+        mrp:"80.75",
     },
         {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/3c569c7b-0ddd-4144-94bd-6127363cdd9f_425x425.jpg",
@@ -409,12 +430,20 @@ function curatedData(curatedArr,start,end){
     let mrp=document.createElement("a");
     mrp.innerText="MRP ₹"+curatedArr[i].mrp;
 
+    let div1=document.createElement("div");
     let addToCart=document.createElement("button");
+    addToCart.addEventListener("click",function(){
+        addToCartFunc(curatedArr[i])
+        alert("Product Added To Cart");
+    })
+
     let span=document.createElement("span");
     span.setAttribute("class","material-symbols-outlined")
     span.innerText="shopping_cart"
-    addToCart.append(span);
-    div.append(img,time,name,qty,mrp,addToCart);
+    addToCart.append(span,"ADD");
+    div1.append(mrp,addToCart)
+
+    div.append(img,time,name,qty,div1);
     document.querySelector("#curated").append(div);
 }
 }
@@ -442,6 +471,11 @@ document.querySelector("#leftBtn2").addEventListener("click",function(){
     }
 })
 
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
 let banner2=[
     "https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_paneerBlog_banner.jpg",
     "https://www.naturesbasket.co.in/Images/homepageblogbanner/NB_pastaBlog_banner.jpg",
@@ -463,6 +497,10 @@ document.querySelector("#leftBtn3").addEventListener("click",function(){
     }
     bann.src=banner2[bannerStat];
 })
+
+
+// Whats Trending
+
 
 let whatsTrending=[
     {
@@ -509,40 +547,55 @@ function trendOffer(whatsTrending){
         let mrp=document.createElement("a");
         mrp.innerText="MRP ₹"+elem.mrp;
     
+        let div1=document.createElement("div");
         let addToCart=document.createElement("button");
+        addToCart.addEventListener("click",function(){
+            addToCartFunc(elem)
+            alert("Product Added To Cart");
+        })
+
         let span=document.createElement("span");
         span.setAttribute("class","material-symbols-outlined")
         span.innerText="shopping_cart"
-        addToCart.append(span);
-        div.append(img,time,name,qty,mrp,addToCart);
+        addToCart.append(span,"ADD");
+        div1.append(mrp,addToCart)
+
+        div.append(img,time,name,qty,div1);
         document.querySelector("#trendingOff").append(div);
     })
 }
+
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
+// Offers
 
 let offerArr=[
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/8fa1abad-91c9-4110-866c-e51e39a5b8c1_425x425.jpg",
         name:"IFB SMALL PRAWN 200G",
         qty:"1 Pc",
-        disamt:"165",
+        mrp:"165",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/6b0dd5aa-bbfe-4961-b40a-2114246bcae9_425x425.jpg",
         name:"Kwality Wall's Ice Cream - Magnum C..",
         qty:"1 Pc",
-        disamt:"216",
+        mrp:"216",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/120d587f-37c9-4743-bc37-2cbb7bd57025_425x425.jpg",
         name:"HA ORGANIC MOONG DAL YELLOW",
         qty:"1 Pc",
-        disamt:"125.1",
+        mrp:"125.1",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/dbffcc93-9bce-442f-837f-d5d5f073c0c0_425x425.jpg",
         name:"Haagen-Dazs Ice Cream - Mango Ras..",
         qty:"1 Pc",
-        disamt:"62.1",
+        mrp:"62.1",
     },
 ]
 offer(offerArr)
@@ -562,14 +615,22 @@ function offer(offerArr){
         qty.innerText=elem.qty;
 
         let price=document.createElement("a");
-        price.innerText="₹"+elem.disamt;
+        price.innerText="MRP ₹"+elem.mrp;
 
+        let div1=document.createElement("div");
         let addToCart=document.createElement("button");
+        addToCart.addEventListener("click",function(){
+            addToCartFunc(elem)
+            alert("Product Added To Cart");
+        })
+
         let span=document.createElement("span");
         span.setAttribute("class","material-symbols-outlined")
         span.innerText="shopping_cart"
-        addToCart.append(span);
-        div.append(img,time,name,qty,price,addToCart);
+        addToCart.append(span,"ADD");
+        div1.append(price,addToCart)
+
+        div.append(img,time,name,qty,div1);
         document.querySelector("#offer").append(div);
     })
 }
@@ -591,30 +652,35 @@ off.addEventListener("click",function(){
     offer(offerArr)
 })
 
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
 let organicArr=[
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/b6be1126-0fba-41aa-9644-159a48b0076f_425x425.jpg",
         name:"Organic Wheat Flour - Healthy Alter..",
         qty:"500 g",
-        disamt:"75",
+        mrp:"75",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/1300491_1_425x425.jpg",
         name:"CONCISOUS FOOD RAW SUGAR 500G",
         qty:"1 Pc",
-        disamt:"86.4",
+        mrp:"86.4",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/20155f80-b4c9-45dd-928b-6df91cb1da9d_425x425.jpg",
         name:"HA ORGANIC FLAX SEEDS 100G",
         qty:"1 Pc",
-        disamt:"49",
+        mrp:"49",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/aff5852b-b487-45f8-b65a-22cbc4842982_425x425.jpg",
         name:"HA CORIANDER PWD 100G",
         qty:"1 Pc",
-        disamt:"59",
+        mrp:"59",
     },
 ]
 
@@ -636,30 +702,35 @@ org.addEventListener("click",function(){
     offer(organicArr)
 })
 
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
 let healthArr=[
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/335e1b40-3a56-4e19-9f6c-010887d4dd55_425x425.jpg",
         name:"HA SPROUTED AMARANTH FLOUR 400G",
         qty:"1 Pc",
-        disamt:"250",
+        mrp:"250",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/1f4696d3-e753-463e-a87c-1457b2e2f242_425x425.jpg",
         name:"Organic Flax Seeds - Healthy Altern..",
         qty:"100 g",
-        disamt:"48",
+        mrp:"48",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/9ea315fa-fcd1-4d3b-a968-17a78bfafc5b_425x425.jpg",
         name:"HA SPROUTED QUINOA FLOUR 400G",
         qty:"1 Pc",
-        disamt:"600",
+        mrp:"600",
     },
     {
         img:"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/335e1b40-3a56-4e19-9f6c-010887d4dd55_425x425.jpg",
         name:"HA SPROUTED AMARANTH FLOUR 400G",
         qty:"1 Pc",
-        disamt:"250",
+        mrp:"250",
     },
 ]
 
@@ -698,6 +769,11 @@ gif.addEventListener("click",function(){
     offer(healthArr)
 })
 
+function addToCartFunc(obj){
+    addArr.push(obj)
+    localStorage.setItem("addToCart",JSON.stringify(addArr))
+}
+
 let brandsArr=[
     "https://d1z88p83zuviay.cloudfront.net/Images/lexlusif.jpg",
     "https://d1z88p83zuviay.cloudfront.net/Images/healthy.jpg",
@@ -729,4 +805,8 @@ document.querySelector("#leftBtn4").addEventListener("click",function(){
         brandFunc(brandsArr,0,5);
         brandCount=0;
     }
+})
+
+document.querySelector("#cartBtn").addEventListener("click",function(){
+    location.href="cartPage.html"
 })

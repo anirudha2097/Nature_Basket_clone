@@ -1,3 +1,6 @@
+
+/* Header */
+
 #container{
     width: 95vw;
     margin: auto;
@@ -290,7 +293,7 @@
     margin-top: -10px;
     margin-bottom: 8px;
 }
-#trend>div>a:nth-child(6),#trend>div>a:nth-child(7){
+#trend>div>div>a{
     font-size: 0.7rem;
     padding: 8px 6px;
     border: 1px solid rgb(200, 198, 198);
@@ -301,26 +304,29 @@
     margin-right: 5px;
     margin-bottom: 50px;
 }
-#trend>div>button{
-    background-color: rgba(146,190,77,255);
-    border: 0px;
-    padding: 2px 10px 6px 10px;
-    border-radius: 9px;
-    margin-bottom: 15px;
-    position: relative;
-    bottom: -2px;
-    cursor: pointer;
+#trend>div>div{
+    display: flex;
+    gap:5x;
+    justify-content: center;
 }
-#trend>div>button::after{
-    content: " ADD";
+#trend>div>div>button{
+    width: 80px;
+    height: 33px;
     font-family: 'Albert Sans', sans-serif;
-    color: white;
     font-weight: 600;
     font-size: 0.6rem;
+    background-color: rgba(146,190,77,255);
+    color: white;
+    border: 0px;
+    border-radius: 9px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#trend>div>button>span{
+#trend>div>div>button>span{
     font-size: 15px;
-    margin-top: 5px;
+    margin-right: 7px;
     color: white;
 }
 #leftBtn1{
@@ -401,7 +407,7 @@
     font-weight: 500;
     margin-top: -10px;
 }
-#curated>div>a:nth-child(5){
+#curated>div>div>a{
     font-size: 0.7rem;
     padding: 8px 6px;
     border: 1px solid rgb(200, 198, 198);
@@ -412,26 +418,29 @@
     margin-right: 5px;
     margin-bottom: 50px;
 }
-#curated>div>button{
-    background-color: rgba(146,190,77,255);
-    border: 0px;
-    padding: 2px 10px 6px 10px;
-    border-radius: 9px;
-    margin-bottom: 15px;
-    position: relative;
-    bottom: -2px;
-    cursor: pointer;
+#curated>div>div{
+    display: flex;
+    gap:5x;
+    justify-content: center;
 }
-#curated>div>button::after{
-    content: " ADD";
+#curated>div>div>button{
+    width: 80px;
+    height: 33px;
     font-family: 'Albert Sans', sans-serif;
-    color: white;
     font-weight: 600;
     font-size: 0.6rem;
+    background-color: rgba(146,190,77,255);
+    color: white;
+    border: 0px;
+    border-radius: 9px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#curated>div>button>span{
+#curated>div>div>button>span{
     font-size: 15px;
-    margin-top: 5px;
+    margin-right: 7px;
     color: white;
 }
 #leftBtn2{
@@ -559,9 +568,9 @@
     font-weight: 500;
     margin-top: -10px;
 }
-#trendingOff>div>a:nth-child(5){
+#trendingOff>div>div>a{
     font-size: 0.7rem;
-    padding: 8px 8px;
+    padding: 8px 6px;
     border: 1px solid rgb(200, 198, 198);
     border-radius: 9px;
     font-weight: 100;
@@ -570,26 +579,29 @@
     margin-right: 5px;
     margin-bottom: 50px;
 }
-#trendingOff>div>button{
-    background-color: rgba(146,190,77,255);
-    border: 0px;
-    padding: 4px 25px 5px 25px;
-    border-radius: 9px;
-    margin-bottom: 13px;
-    position: relative;
-    bottom: -4px;
-    cursor: pointer;
+#trendingOff>div>div{
+    display: flex;
+    gap:5x;
+    justify-content: center;
 }
-#trendingOff>div>button::after{
-    content: " ADD";
+#trendingOff>div>div>button{
+    width: 80px;
+    height: 33px;
     font-family: 'Albert Sans', sans-serif;
-    color: white;
     font-weight: 600;
     font-size: 0.6rem;
+    background-color: rgba(146,190,77,255);
+    color: white;
+    border: 0px;
+    border-radius: 9px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#trendingOff>div>button>span{
+#trendingOff>div>div>button>span{
     font-size: 15px;
-    margin-top: 5px;
+    margin-right: 7px;
     color: white;
 }
 #trendingOff+div{
@@ -672,9 +684,9 @@
     font-weight: 500;
     margin-top: -10px;
 }
-#offer>div>a:nth-child(5),#offer>div>a:nth-child(6){
+#offer>div>div>a{
     font-size: 0.7rem;
-    padding: 8px 8px;
+    padding: 8px 6px;
     border: 1px solid rgb(200, 198, 198);
     border-radius: 9px;
     font-weight: 100;
@@ -683,26 +695,29 @@
     margin-right: 5px;
     margin-bottom: 50px;
 }
-#offer>div>button{
-    background-color: rgba(146,190,77,255);
-    border: 0px;
-    padding: 4px 25px 5px 25px;
-    border-radius: 9px;
-    margin-bottom: 13px;
-    position: relative;
-    bottom: -4px;
-    cursor: pointer;
+#offer>div>div{
+    display: flex;
+    gap:5x;
+    justify-content: center;
 }
-#offer>div>button::after{
-    content: " ADD";
+#offer>div>div>button{
+    width: 80px;
+    height: 33px;
     font-family: 'Albert Sans', sans-serif;
-    color: white;
     font-weight: 600;
     font-size: 0.6rem;
+    background-color: rgba(146,190,77,255);
+    color: white;
+    border: 0px;
+    border-radius: 9px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#offer>div>button>span{
+#offer>div>div>button>span{
     font-size: 15px;
-    margin-top: 5px;
+    margin-right: 7px;
     color: white;
 }
 #offer+div{
