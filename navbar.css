@@ -1,5 +1,5 @@
 #navbar{
-    width: 96vw;
+    width: 98vw;
     height: 80px;
     margin: auto;
     display: flex;
@@ -95,14 +95,19 @@
     background-color: transparent;
     border: 0px;
     cursor: pointer;
-    
+}
+#login>div>.btn:first-child{
+    border-right: 1px solid rgb(190, 190, 190);
 }
 #login>div>a{
     color: black;
-    margin-left: 10px;
+    margin-left: 2px;
     margin-right: -6px;
     text-decoration: none;
     cursor: pointer;
+}
+#login>div>a:first-child{
+    border-right: 1px solid black;
 }
 #login>div>a:hover{
     text-decoration: underline;
@@ -112,8 +117,4 @@
     align-items: center;
     margin-left: -3px;
 }
-#login>div>.btn+a{
-    font-size: 2rem;
-    margin-left: 2px;
-    margin-right: 2px;
-}
+
