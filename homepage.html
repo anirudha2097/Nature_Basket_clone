@@ -12,12 +12,19 @@
 
 </head>
 <body>
-
+    <form>
+        <input type="tel" maxlength="10" name="" id="mobNo" placeholder="Mobile No."/>
+        <input type="email" name="" id="email" placeholder="Email Address"/>
+        <input type="password" maxlength="8" id="pass" placeholder="set password" />
+        <input type="submit" value="Register">
+    </form>
     <!-- Navbar Section -->
     
     <div id="navbar">
         <div id="logo">
-            <img src="https://www.naturesbasket.co.in/Images/logosnew.png?v=2" alt="logo">
+            <a href="homepage.html">
+                <img src="https://www.naturesbasket.co.in/Images/logosnew.png?v=2" alt="logo">
+            </a>
         </div>
         <div id="searchBox">
             <div>
@@ -49,8 +56,8 @@
         </div>
         <div id="login">
             <div>
-                <a href="">Login&nbsp;&nbsp;</a>
-                <a href="">&nbsp;&nbsp;Register</a>
+                <a href="" id="loginId">Login&nbsp;&nbsp;</a>
+                <a href="" id="register">&nbsp;&nbsp;Register</a>
             </div>
             <div>
                 <button class="btn"><span class="material-symbols-outlined">star</span></button>

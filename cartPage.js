@@ -24,16 +24,21 @@ function addArrfun(addArr){
             subTotal.innerText="₹ "+elem.mrp*count.innerText;
             qty.append(minus,count,ad)
             sub.innerText=(+sub.innerText)+(+elem.mrp)
-            t.innerText=+sub.innerText+(+charge) 
+            t.innerText=Math.round(+sub.innerText+(+charge))
         })
         let minus=document.createElement("button");
         minus.innerText="-";
         minus.addEventListener("click",function(){
             count.innerText--;
-            subTotal.innerText="₹ "+elem.mrp*count.innerText;
-            qty.append(minus,count,ad)
-            sub.innerText=(+sub.innerText)-(+elem.mrp)
-            t.innerText=+sub.innerText
+            if(count.innerText==0){
+                deleteRow(elem,index)
+                location.href="cartPage.html"
+            } else{
+                subTotal.innerText="₹ "+elem.mrp*count.innerText;
+                qty.append(minus,count,ad)
+                sub.innerText=(+sub.innerText)-(+elem.mrp)
+                t.innerText=Math.round(+sub.innerText)+(+charge)
+            }
         })
         qty.append(minus,count,ad)
 
@@ -47,6 +52,7 @@ function addArrfun(addArr){
         dele.append(sp)
         dele.addEventListener("click",function(){
             deleteRow(elem,index)
+            location.href="cartPage.html"
         })
 
         row.append(name,mrp,dis,qty,subTotal,dele);
@@ -56,11 +62,10 @@ function addArrfun(addArr){
 
         let t=document.querySelector("#totalAmt");
         let charge=document.querySelector("#deliveryCharge").innerText;
-        t.innerText=+sub.innerText+(+charge) 
+        t.innerText=Math.round(+sub.innerText+(+charge))
         
         cartItems++;
         document.querySelector("#itemCount").innerText=cartItems;
-
     })
 
     function deleteRow(elem,index){
@@ -241,3 +246,20 @@ document.querySelector("#leftBtn2").addEventListener("click",function(){
 document.querySelector("#continue").addEventListener("click",function(){
     location.href="homepage.html"
 })
+
+document.querySelector("#checkout").addEventListener("click",function(){
+    let t=document.querySelector("#totalAmt").innerText;
+    if(+t>0){
+        location.href="payment.html"
+    }  else{
+        alert("Order amount should be more than Rs.0/-")
+    }
+})
+let loginStatus=localStorage.getItem("loginStatus");
+let emailId=localStorage.getItem("emailId");
+if(loginStatus){
+    document.querySelector("#register").innerText="";
+    document.querySelector("#loginId").innerText=emailId.slice(0,17);
+    document.querySelector("#loginId").style.color="rgba(146,190,77,255)"
+    document.querySelector("#loginId").style.borderRight="0px"
+}

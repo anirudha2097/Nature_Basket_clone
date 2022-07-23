@@ -810,3 +810,23 @@ document.querySelector("#leftBtn4").addEventListener("click",function(){
 document.querySelector("#cartBtn").addEventListener("click",function(){
     location.href="cartPage.html"
 })
+
+document.querySelector("#register").addEventListener("click",function(event){
+    event.preventDefault()
+    document.querySelector("form").style.marginTop="-10px";
+})
+let loginstatus=false;
+let emailId=localStorage.getItem("emailId");
+let loginStatus=localStorage.getItem("loginStatus")
+document.querySelector("form").addEventListener("submit",function(event){
+    event.preventDefault()
+    loginstatus=true;
+    let email=document.querySelector("#email").value;
+    document.querySelector("#register").innerText="";
+    document.querySelector("#loginId").innerText=emailId.slice(0,17);
+    document.querySelector("#loginId").style.color="rgba(146,190,77,255)"
+    document.querySelector("#loginId").style.borderRight="0px"
+    document.querySelector("form").style.marginTop="-100px";
+    localStorage.setItem("loginStatus",loginstatus)
+    localStorage.setItem("emailId",email)
+})
