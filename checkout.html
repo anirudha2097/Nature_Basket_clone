@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cart common-tank-1254</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f426985a11.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="cartPage.css">
 </head>
 <body>
-    <!-- Navbar -->
     <div id="navbar">
         <div id="logo">
             <a href="homepage.html">
@@ -53,35 +52,34 @@
             </div>
             <div>
                 <button class="btn"><span class="material-symbols-outlined">star</span></button>
-                <button class="btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                <button class="btn" id="cartBtn"><span class="material-symbols-outlined">shopping_cart</span></button>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header Section -->
 
-    
     <div id="container">
-        <div class="dropdown">
-            <span>SHOP BY CATEGORY</span>
-            <ul class="downmenu">
-                <li>&nbsp;&nbsp;Gift Hampers</li>
-                <li>&nbsp;&nbsp;Fruits & Vegetables</li>
-                <li>&nbsp;&nbsp;Cheese, Meat & Fruit Platters</li>
-                <li>&nbsp;&nbsp;Delicatessen & Cheese</li>
-                <li>&nbsp;&nbsp;International Cuisine</li>
-                <li>&nbsp;&nbsp;Health</li>
-                <li>&nbsp;&nbsp;Indian Grocery</li>
-                <li>&nbsp;&nbsp;Confectionary & Patisserie</li>
-                <li>&nbsp;&nbsp;Meats, Seafood And Eggs</li>
-                <li>&nbsp;&nbsp;Snack Bar</li>
-                <li>&nbsp;&nbsp;Snack & Beverages</li>
-                <li>&nbsp;&nbsp;Breakfast, Dairy & Bakery</li>
-                <li>&nbsp;&nbsp;Instant Meals & Aids</li>
-                <li>&nbsp;&nbsp;The Good Food Cafe</li>
-                <li>&nbsp;&nbsp;Packing Material</li>
-            </ul>
-        </div>
+            <div class="dropdown">
+                <span>SHOP BY CATEGORY</span>
+                <ul class="downmenu">
+                    <li>&nbsp;&nbsp;Gift Hampers</li>
+                    <li>&nbsp;&nbsp;Fruits & Vegetables</li>
+                    <li>&nbsp;&nbsp;Cheese, Meat & Fruit Platters</li>
+                    <li>&nbsp;&nbsp;Delicatessen & Cheese</li>
+                    <li>&nbsp;&nbsp;International Cuisine</li>
+                    <li>&nbsp;&nbsp;Health</li>
+                    <li>&nbsp;&nbsp;Indian Grocery</li>
+                    <li>&nbsp;&nbsp;Confectionary & Patisserie</li>
+                    <li>&nbsp;&nbsp;Meats, Seafood And Eggs</li>
+                    <li>&nbsp;&nbsp;Snack Bar</li>
+                    <li>&nbsp;&nbsp;Snack & Beverages</li>
+                    <li>&nbsp;&nbsp;Breakfast, Dairy & Bakery</li>
+                    <li>&nbsp;&nbsp;Instant Meals & Aids</li>
+                    <li>&nbsp;&nbsp;The Good Food Cafe</li>
+                    <li>&nbsp;&nbsp;Packing Material</li>
+                </ul>
+            </div>
         <button><span class="material-symbols-outlined">arrow_drop_down</span></button>
         <div>MY ORDERS</div>
         <div>GIFTING</div>
@@ -91,45 +89,34 @@
         <div>CONNOISSEUR’S SELECTION</div>
         <div>BOOK STORE VISIT</div>
     </div>
-    <div id="banner1">
-        <img src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/websitecart.png" alt="">
-    </div>
-    <div>
-        <p>MY CART(<span id="itemCount">0</span> ITEMS) &nbsp;|&nbsp;&nbsp;<i class="fa-solid fa-arrows-rotate"></i>&nbsp;&nbsp;Refresh</p>
-        <button id="checkout">PROCEED TO CHECKOUT</button>
-        <button id="continue">CONTINUE SHOPPING</button>
-    </div>
-    <p><img src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/8ab57ed4-47e0-426a-8382-f4c89b11826a.png" alt=""> GET YOUR ORDER DELIVERED IN 90 MINUTES . SERVICE TIMINGS BETWEEN 10:00 AM TO 9.30 PM .</p>
-    <table>
-        <thead>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Discount</td>
-            <td>Qty</td>
-            <td>Sub-Total</td>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <div>
-        <p></p>
-    </div>
-    <div id="cartTotal">
-        <p>Sub-Total:<span id="subtotal">0</span><span>₹</span></p>
-        <p>Delivery Charges:<span id="deliveryCharge">50.00</span><span>₹</span></p>
-        <p>TOTAL:<span id="totalAmt">0</span></p>
-    </div>
-    <div>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;CURATED FOR YOU&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    </div>
-    <div id="curated"></div>
-    <button id="leftBtn2"><span class="material-symbols-outlined">keyboard_arrow_left</span></button>
-    <button id="rightBtn2"><span class="material-symbols-outlined">keyboard_arrow_right</span></button>
-    <div>
-        <p>RECENTLY BOUGHT BY OTHERS</p>
-    </div>
-    <div id="crauser1"></div>
-    <div id="top">
+
+    <!-- Payment Section -->
+    <form action="">
+        <p>PAYMENT <span>DETAILS</span></p>
+        <label for="">CREDIT / DEBIT CARD</label>
+        <br>
+        <input type="tel" placeholder="Enter Card Number" id="number" maxlength="12" required/>
+        <br>
+        <label for="">Name</label>
+        <br>
+        <input type="text" name="" id="" placeholder="Name on card" required>
+        <br>
+        <label for="">Expiry</label>
+        <br>
+        <input type="text" name="" id="expiry" placeholder="MM / YY" required>
+        <br>
+        <label for="">CVV</label>
+        <br>
+        <input type="password" name="" id="cvv" placeholder="CVV" maxlength="3" required>
+        <br>
+        <label for="">PIN</label>
+        <br>
+        <input type="password" name="" id="pin" placeholder="PIN" maxlength="6" required>
+        <br>
+        <input type="submit" id="paynow" value="Pay Now"/>
+    </form>    
+     <!-- Footer -->
+     <div id="top">
         <div id="col1">
             <h5>DOWNLOAD THE APP</h5>
             <div>
@@ -302,4 +289,27 @@
 </body>
 </html>
 
-<script src="cartPage.js"></script>
+<script>
+   
+    document.querySelector("form").addEventListener("submit",function (){
+        event.preventDefault()
+        let no=document.querySelector("#number").value;
+        let expiry=document.querySelector("#expiry").value;
+        let cvv=document.querySelector("#cvv").value;
+        let pin=document.querySelector("#pin").value;
+        if(no=="123456789011" && expiry=="12/25" && cvv=="123" && pin=="1234"){
+            alert("OTP Send to your registered mobile no.")
+            location.href="otp.html"
+        } else{
+            alert("invalid credentials")
+        }
+    })
+    let loginStatus=localStorage.getItem("loginStatus");
+    let emailId=localStorage.getItem("emailId");
+    if(loginStatus){
+        document.querySelector("#register").innerText="";
+        document.querySelector("#loginId").innerText=emailId.slice(0,17);
+        document.querySelector("#loginId").style.color="rgba(146,190,77,255)"
+        document.querySelector("#loginId").style.borderRight="0px"
+    }
+</script>

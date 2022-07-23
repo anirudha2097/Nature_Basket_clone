@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        form{
+            width: 95vw;
+            height: 70px;
+            margin: auto;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        form>input{
+            width: 18%;
+            height: 15px;
+            margin-top: 20px;
+            padding: 8px;
+            border: 0.5px solid gainsboro;
+        }
+        form>input:last-child{
+            width: 12%;
+            height: 30px;
+            background-color: rgba(146,190,77,255);
+            border: 0px;
+            color: white;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="tel" maxlength="10" name="" id="mobNo" placeholder="Mobile No."/>
+        <input type="email" name="" id="email" placeholder="Email Address"/>
+        <input type="password" maxlength="8" id="pass" placeholder="set password" />
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

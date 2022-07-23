@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <style>
+        #otp{
+            width: 20vw;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+            font-family: 'Comfortaa', cursive;
+            border: 1px solid black;
+            background-color: white;
+            padding-bottom: 10px;
+        }
+        #otp>p>span{
+            color: rgba(191,52,104,255);
+        }
+        #otp>input{
+            width: 20px;
+            height: 20px;
+            background-color: rgba(239, 242, 228, 0.71);
+            text-align: center;
+            border: 0.5px solid gainsboro;
+        }
+        #otp>input:last-child{
+            width: 100px;
+            height: 30px;
+            margin-top: 20px;
+            background-color: rgba(146,190,77,255);
+            color: white;
+            font-family: 'Comfortaa', cursive;
+            border: 0px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="otp">
+        <p>Enter <span>OTP</span></p>
+        <input type="tel" maxlength="1" id="num1">
+        <input type="tel" maxlength="1" id="num2">
+        <input type="tel" maxlength="1" id="num3">
+        <input type="tel" maxlength="1" id="num4">
+        <input type="tel" maxlength="1" id="num5">
+        <input type="tel" maxlength="1" id="num6">
+        <br>
+        <input type="submit" id="otpSubmit" />
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",function(){
+        event.preventDefault()
+        let a=document.querySelector("#num1").value;
+        let b=document.querySelector("#num2").value;
+        let c=document.querySelector("#num3").value;
+        let d=document.querySelector("#num4").value;
+        let e=document.querySelector("#num5").value;
+        let f=document.querySelector("#num6").value;
+        if(a=="1" && b=="2" && c=="3" && d=="4" && e=="5" && f=="6"){
+            alert("Payment Successful")
+            location.href="homepage.html"
+        } else{
+            alert("Enter Valid OTP")
+        }
+    })
+</script>

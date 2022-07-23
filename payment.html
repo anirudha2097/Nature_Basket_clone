@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cart common-tank-1254</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f426985a11.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="cartPage.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -53,14 +53,12 @@
             </div>
             <div>
                 <button class="btn"><span class="material-symbols-outlined">star</span></button>
-                <button class="btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                <button class="btn" id="cartBtn"><span class="material-symbols-outlined">shopping_cart</span></button>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
-
-    
+    <!-- Header Section -->
     <div id="container">
         <div class="dropdown">
             <span>SHOP BY CATEGORY</span>
@@ -91,44 +89,63 @@
         <div>CONNOISSEUR’S SELECTION</div>
         <div>BOOK STORE VISIT</div>
     </div>
-    <div id="banner1">
-        <img src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/websitecart.png" alt="">
+
+    <!-- Payment Page -->
+    <div id="addressDetails">
+        <p>ADDRESS <span class="pink">DETAILS</span></p>
+        <p>Enter Shipping Address</p>
+        <p>( Fields marked with * are mandatory )</p>
+        <br>
+        <label for="">First Name*</label>
+        <input type="text" name="" id="firstName" required/>
+        <br>
+        <label for="">Last Name*</label>
+        <input type="text" name="" id="lastName" required/>
+        <br>
+        <label for="">Address*</label>
+        <textarea name="" id="address" cols="30" rows="10" required></textarea>
+        <br>
+        <br>
+        <br>
+        <label for="">Landmark*</label>
+        <input type="text" name="" id="landmark" required/>
+        <br>
+        <label for="">Pincode*</label>
+        <input type="number"/ id="pincode" required>
+        <br>
+        <label for="">Area*</label>
+        <select name="" id="area" required>
+            <option value="">Select</option>
+            <option value="btroad">B T Kawade Road</option>
+            <option value="pune">Pune City</option>
+        </select>
+        <br>
+        <label for="">Country*</label>
+        <input type="text" id="country" required/>
+        <br>
+        <label for="">State*</label>
+        <input type="text" id="state" required/>
+        <br>
+        <label for="">City*</label>
+        <input type="text" id="city" required/>
+        <br>
+        <label for="">Mobile No*</label>
+        <input type="text" id="mobNo" required/>
     </div>
-    <div>
-        <p>MY CART(<span id="itemCount">0</span> ITEMS) &nbsp;|&nbsp;&nbsp;<i class="fa-solid fa-arrows-rotate"></i>&nbsp;&nbsp;Refresh</p>
-        <button id="checkout">PROCEED TO CHECKOUT</button>
-        <button id="continue">CONTINUE SHOPPING</button>
-    </div>
-    <p><img src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/8ab57ed4-47e0-426a-8382-f4c89b11826a.png" alt=""> GET YOUR ORDER DELIVERED IN 90 MINUTES . SERVICE TIMINGS BETWEEN 10:00 AM TO 9.30 PM .</p>
-    <table>
-        <thead>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Discount</td>
-            <td>Qty</td>
-            <td>Sub-Total</td>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+    <label for="">Billing Address</label>
+    <input type="checkbox" name="" id="" checked>
+    <label for="">Same as Shipping Address</label>
     <div>
         <p></p>
     </div>
-    <div id="cartTotal">
-        <p>Sub-Total:<span id="subtotal">0</span><span>₹</span></p>
-        <p>Delivery Charges:<span id="deliveryCharge">50.00</span><span>₹</span></p>
-        <p>TOTAL:<span id="totalAmt">0</span></p>
-    </div>
-    <div>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;CURATED FOR YOU&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    </div>
-    <div id="curated"></div>
-    <button id="leftBtn2"><span class="material-symbols-outlined">keyboard_arrow_left</span></button>
-    <button id="rightBtn2"><span class="material-symbols-outlined">keyboard_arrow_right</span></button>
-    <div>
-        <p>RECENTLY BOUGHT BY OTHERS</p>
-    </div>
-    <div id="crauser1"></div>
+    <input type="checkbox" name="" id="">
+    <br>
+    <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I would like to gift this order</label>
+    <p id="gift">GIFT<span class="pink"> MESSAGE </span>(Optional)</p>
+    <textarea type="text" name="" id="" cols="40" rows="10"></textarea>
+    <button id="placeOrder">REVIEW AND PLACE ORDER</button>
+    
+    <!-- Footer -->
     <div id="top">
         <div id="col1">
             <h5>DOWNLOAD THE APP</h5>
@@ -302,4 +319,30 @@
 </body>
 </html>
 
-<script src="cartPage.js"></script>
+<script>
+    document.querySelector("#placeOrder").addEventListener("click",function(){
+        let a=document.querySelector("#firstName").value;
+        let b=document.querySelector("#lastName").value;
+        let c=document.querySelector("#address").value;
+        let d=document.querySelector("#landmark").value;
+        let e=document.querySelector("#pincode").value;
+        let f=document.querySelector("#area").value;
+        let g=document.querySelector("#country").value;
+        let h=document.querySelector("#state").value;
+        let i=document.querySelector("#city").value;
+        let j=document.querySelector("#mobNo").value;
+        if(a!=""&&b!=""&&c!=""&&d!=""&&e!=""&&f!=""&&g!=""&&h!=""&&i!=""&&j!=""){
+            location.href="deliverySlot.html"
+        } else{
+            alert("Please fill all details")
+        }
+    })
+    let loginStatus=localStorage.getItem("loginStatus");
+    let emailId=localStorage.getItem("emailId");
+    if(loginStatus){
+        document.querySelector("#register").innerText="";
+        document.querySelector("#loginId").innerText=emailId.slice(0,17);
+        document.querySelector("#loginId").style.color="rgba(146,190,77,255)"
+        document.querySelector("#loginId").style.borderRight="0px"
+    }
+</script>

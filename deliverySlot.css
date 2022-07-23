@@ -1,0 +1,206 @@
+/* Header */
+
+#container{
+    width: 95vw;
+    margin: auto;
+    margin-top: 2px;
+    padding: 7px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #c5c3c3;
+    font-family: 'Comfortaa', cursive;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+#container>div{
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+#container>button{
+    width: 4%;
+    height: 32px;
+    margin-left: -55px;
+    margin-top: -9px;
+    margin-bottom: -9px;
+    margin-right: -20px;
+    padding: 0px;
+    border: 0px;
+    border-bottom: 1px solid #c5c3c3;
+    border-top: 1px solid #c5c3c3;
+    background-color: #e9e9e9;
+    color: rgba(191,52,104,255);
+    cursor: pointer;
+}
+#container>button~div:hover{
+    background-color: #e9e9e9;
+    margin: -7px -26px -7px -26px;
+    padding: 7px 26px 8px 26px;
+    border-bottom: 2px solid rgba(146,190,77,255);
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.dropdown>span{
+    font-size: 0.9rem;
+    height: 100%;
+    margin-left: -2.9rem;
+    color: rgba(191,52,104,255);
+    background-color: #e9e9e9;
+    padding: 7px 5px 7px 11px;
+    border-top: 1px solid #c5c3c3;
+    border-left: 1px solid #c5c3c3;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.downmenu{
+    display: none;
+    position: absolute;
+    top: 0.6rem;
+    left: -2.9rem;
+    min-width: 193px;
+    font-size: 0.7rem;
+    z-index: 1;
+    letter-spacing: 0px;
+}
+.downmenu{
+    border: 1px solid #c5c3c3;
+    background-color: white;
+}
+.downmenu>li{
+    margin-top: 0px;
+    margin-left: -40px;
+    padding: 9px 0px 9px 4px;
+    list-style: none;
+    border-bottom: 1px solid#c5c3c3;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    cursor: pointer;
+}
+.dropdown:hover .downmenu{
+    display: block;
+}
+.downmenu>li::after{
+    float: right;
+    content: ">";
+    padding-right: 14px;
+}
+.downmenu>li:hover{
+    background-color: rgba(146,190,77,255);
+    color: white;
+}
+/* Header End */
+#select{
+    margin-left: 30px;
+    margin-top: 20px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+#select>span{
+    color: rgba(191,52,104,255);
+}
+#head{
+    width: 93vw;
+    margin: auto;
+    margin-top: 3rem;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.8rem;
+    border-bottom: 2px solid rgba(146,190,77,255);
+}
+#head>span{
+    margin-left: 20px;
+    margin-right: 290px;
+    line-height: 35px;
+}
+#row1{
+    width: 93vw;
+    margin: auto;
+    display: flex;
+}
+#row1>div{
+    width: 11%;
+    text-align: center;
+    padding: 20px 2px;
+    border: 1px solid #f4f1f1;
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+    background-color: #f6f6f6;
+}
+#row2{
+    width: 93vw;
+    margin: auto;
+    display: flex;
+}
+#row2>div{
+    width: 11%;
+    text-align: center;
+    padding: 20px 2px;
+    border: 1px solid #f4f1f1;
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+}
+#row3{
+    width: 93vw;
+    margin: auto;
+    display: flex;
+}
+#row3>div{
+    width: 11%;
+    text-align: center;
+    padding: 20px 2px;
+    border: 1px solid #f4f1f1;
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+}
+#row1>div:first-child, #row3>div:first-child{
+    background-color: #dddddd;
+}
+#row2>div:nth-child(1),#row2>div:nth-child(2),#row2>div:nth-child(3){
+    background-color: #f6f6f6;
+}
+#row3>div:nth-child(2),#row3>div:nth-child(3){
+    background-color: #f6f6f6;
+}
+.btn1,.btn2,.btn3{
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+    border: 0px;
+    color: transparent;
+}
+.btn1{
+    background-color: white;
+    border: 0.5px solid gainsboro;
+}
+.btn2{
+    background-color: #dddddd;
+}
+.btn3{
+    background-color: rgb(53, 53, 239);
+}
+#row3~span{
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+}
+#proceed{
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+    padding: 7px 30px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: rgba(146,190,77,255);
+    color: white;
+}
+#proceed+p{
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 0.8rem;
+    font-family: 'Comfortaa', cursive;
+    color: red;
+}
