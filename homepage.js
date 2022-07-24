@@ -823,7 +823,7 @@ document.querySelector("form").addEventListener("submit",function(event){
     loginstatus=true;
     let email=document.querySelector("#email").value;
     document.querySelector("#register").innerText="";
-    document.querySelector("#loginId").innerText=emailId.slice(0,17);
+    document.querySelector("#loginId").innerText=emailId;
     document.querySelector("#loginId").style.color="rgba(146,190,77,255)"
     document.querySelector("#loginId").style.borderRight="0px"
     document.querySelector("form").style.marginTop="-100px";
